@@ -1,0 +1,170 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.submit__save,
+button {
+	font: 1em/1.5 Nunito, sans-serif;
+	font-size: calc(10px + (40 - 20) * (100vw - 320px) / (1280 - 320));
+
+}
+
+.submit__save {
+	background-color: hsl(223, 10%, 90%);
+	color: hsl(223, 10%, 10%);
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+/* Main button styles */
+.btn__js {
+	background-color: transparent;
+	border-radius: 1.5em;
+	display: block;
+	position: relative;
+	width: 7.5em;
+	height: 3em;
+	transition: width 0.3s ease-in-out;
+}
+
+.btn__js:not(:disabled):active {
+	transform: translateY(0.1em);
+}
+
+.btn__text {
+	background-color: hsl(223, 90%, 55%);
+	border-radius: inherit;
+	color: hsl(0, 0%, 100%);
+	display: inline-block;
+	padding: 0.55em 0.7em;
+	transition:
+		background-color 0.15s linear,
+		color 0.15s 0.3s ease-in-out;
+	width: 100%;
+}
+
+.btn__js:not(:disabled):focus .btn__text,
+.btn__js:not(:disabled):hover .btn__text {
+	background-color: hsl(223, 90%, 45%);
+}
+
+.btn__progress {
+	overflow: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3em;
+	height: 3em;
+	visibility: hidden;
+}
+
+.btn__progress-track {
+	border: 10px solid greenyellow;
+	stroke: hsl(223, 10%, 80%);
+	stroke-width: 24;
+}
+
+.btn__progress-fill {
+	border: 10px solid greenyellow;
+	stroke: hsl(223, 90%, 55%);
+	stroke-dashoffset: 125.66;
+}
+
+.btn__progress-check {
+	border: 10px solid greenyellow;
+
+	stroke: hsl(0, 0%, 100%);
+	stroke-dashoffset: 34;
+}
+
+/* Both states */
+.btn--running,
+.btn--done {
+	outline: none;
+	pointer-events: none;
+	width: 3em;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.btn--running .btn__text,
+.btn--done .btn__text {
+	color: transparent;
+	transition:
+		background-color 0.3s ease-in-out,
+		visibility 0.3s steps(1);
+}
+
+.btn--running .btn__progress,
+.btn--done .btn__progress {
+	visibility: visible;
+}
+
+/* Running state */
+.btn--running .btn__text {
+	background-color: hsl(223, 10%, 80%);
+	visibility: hidden;
+}
+
+.btn--running .btn__progress {
+	transition: visibility 0.3s 0.3s steps(1, start);
+}
+
+.btn--running .btn__progress-track {
+	stroke-width: 8;
+	transition:
+		r 0.3s 0.3s ease-in-out,
+		stroke-width 0.3s 0.3s ease-in-out;
+}
+
+.btn--running .btn__progress-fill {
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 2s 0.6s linear;
+}
+
+/* Done state */
+.btn--done .btn__progress-track {
+	stroke: hsl(223, 90%, 55%);
+	transition:
+		r 0.3s ease-in-out,
+		stroke-width 0.3s ease-in-out;
+}
+
+.btn--done .btn__progress-check {
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 0.3s 0.3s ease-out;
+}
+.btn-secondary{
+	border-radius: 20px;
+	height: 45px;
+	width: 90px;
+}
+
+.hidden{
+	display: none !important;
+}
+
+.out-true{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.out-false{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.card-body{
+	width: 300px;
+	height: 100px;
+	/* overflow:initial; */
+}
+
+/* .back{
+  display: none;
+} */
